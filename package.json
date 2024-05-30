@@ -1,0 +1,11 @@
+{
+  "name": "model-survey-io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Conley Potter",
+  "license": "ISC",
+  "description": ""
+}
