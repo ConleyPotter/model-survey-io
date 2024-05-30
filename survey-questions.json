@@ -1,0 +1,112 @@
+{
+  "understanding your brand": {
+    "1": {
+      "number": 1,
+      "question": "What is your brand's mission, vision, and core values?",
+      "topic": "understanding your brand"
+    },
+    "2": {
+      "number": 2,
+      "question": "How would you describe your brand's personality (e.g., friendly, professional, quirky)?",
+      "topic": "understanding your brand"
+    },
+    "3": {
+      "number": 3,
+      "question": "What tone and style do you want your content to convey (e.g., formal, conversational, humorous)?",
+      "topic": "understanding your brand"
+    },
+    "4": {
+      "number": 4,
+      "question": "Provide examples of content or writing styles that align with your desired brand voice.",
+      "topic": "understanding your brand"
+    }
+  },
+  "target audience": {
+    "5": {
+      "number": 5,
+      "question": "Who is your ideal customer or target audience?",
+      "topic": "target audience"
+    },
+    "6": {
+      "number": 6,
+      "question": "What are their demographics (age, gender, location, etc.)?",
+      "topic": "target audience"
+    },
+    "7": {
+      "number": 7,
+      "question": "What are their interests, pain points, and challenges related to your offerings?",
+      "topic": "target audience"
+    },
+    "8": {
+      "number": 8,
+      "question": "How do you want your audience to perceive your brand?",
+      "topic": "target audience"
+    }
+  },
+  "products and services": {
+    "9": {
+      "number": 9,
+      "question": "What products or services do you offer?",
+      "topic": "products and services"
+    },
+    "10": {
+      "number": 10,
+      "question": "What are the unique selling points or benefits of each offering?",
+      "topic": "products and services"
+    },
+    "11": {
+      "number": 11,
+      "question": "What problems or needs do your offerings address for your target audience?",
+      "topic": "products and services"
+    },
+    "12": {
+      "number": 12,
+      "question": "Provide examples of successful sales copy or marketing materials for your products/services.",
+      "topic": "products and services"
+    }
+  },
+  "content strategy": {
+    "13": {
+      "number": 13,
+      "question": "What are your content marketing goals (e.g., lead generation, sales, brand awareness)?",
+      "topic": "content strategy"
+    },
+    "14": {
+      "number": 14,
+      "question": "What types of content do you need (e.g., blog posts, email sequences, social media posts)?",
+      "topic": "content strategy"
+    },
+    "15": {
+      "number": 15,
+      "question": "What topics or themes should the content cover?",
+      "topic": "content strategy"
+    },
+    "16": {
+      "number": 16,
+      "question": "Are there any specific keywords or phrases to include for SEO purposes?",
+      "topic": "content strategy"
+    },
+    "17": {
+      "number": 17,
+      "question": "What is your preferred content structure (e.g., headings, bullet points, storytelling)?",
+      "topic": "content strategy"
+    }
+  },
+  "ideation and creativity": {
+    "18": {
+      "number": 18,
+      "question": "What are your sources of inspiration for new product or content ideas?",
+      "topic": "ideation and creativity"
+    },
+    "19": {
+      "number": 19,
+      "question": "Describe a recent successful product launch or marketing campaign.",
+      "topic": "ideation and creativity"
+    },
+    "20": {
+      "number": 20,
+      "question": "What makes your offerings unique or different from competitors?",
+      "topic": "ideation and creativity"
+    }
+  }
+}
