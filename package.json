@@ -9,6 +9,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@langchain/core": "^0.2.3",
+    "@langchain/openai": "^0.0.34",
+    "@types/node": "^20.12.13",
     "langchain": "^0.2.3"
   }
 }
