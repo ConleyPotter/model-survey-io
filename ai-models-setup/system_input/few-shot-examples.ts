@@ -1,13 +1,13 @@
 export const prompt = `Create an example of fictitious spiritual coaches and/or course creators. 
-I need you to describe the services, ideal clients, brand, mission, values, and goals 
+I need you to describe the products and services, ideal clients, brand, mission, values, and goals 
 of each fictitious spiritual coach and/or course creator. Your output should be in 
 "you statements," as in: "your missions is to..." or "you offer a range of services..."`
 
 export const examples = [
     {
         input: prompt,
-        output: `Luna Serenity Coaching 
-        Services:
+        output: `Company Name: Luna Serenity Coaching 
+        Products and Services:
         You offer a range of services including one-on-one spiritual coaching sessions, 
         group workshops on mindfulness and meditation, online courses in intuitive 
         development, and retreats focused on inner peace and emotional healing. 
@@ -44,8 +44,8 @@ export const examples = [
     },
     {
         input: prompt,
-        output: `Starpath Ascension Academy
-        Services:
+        output: `Company Name: Starpath Ascension Academy
+        Products and Services:
         You offer comprehensive spiritual courses that 
         cover topics such as chakra healing, energy work, 
         astral projection, and past life regression. 
@@ -82,8 +82,8 @@ export const examples = [
     },
     {
         input: prompt,
-        output: `Soul Journey Guidance
-        Services:
+        output: `Company Name: Soul Journey Guidance
+        Products and Services:
         You offer personalized spiritual guidance sessions, soul 
         purpose discovery programs, and workshops on spiritual awakening 
         and manifestation. Additionally, you provide guided meditations 

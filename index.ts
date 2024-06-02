@@ -2,7 +2,7 @@ import { ChatOpenAI } from "@langchain/openai";
 import { JsonOutputParser } from "@langchain/core/output_parsers";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { ChatMessageHistory } from "langchain/memory";
-import surveyQuestions from "./survey-questions.json";
+import surveyQuestions from "./data/survey-questions";
 
 const model = new ChatOpenAI({
     apiKey: process.env.OPENAI_API_KEY,

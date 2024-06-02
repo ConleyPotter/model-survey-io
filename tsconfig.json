@@ -1,9 +1,9 @@
 {
     "compilerOptions": {
-        "resolveJsonModule": true,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "module": "nodenext"
     },
     "include": [
-        "index.ts", "tutorial/**/*", "system_input/**/*"
+        "index.ts", "tutorial/**/*", "ai-models-setup/system_input/**/*"
     ]
 }

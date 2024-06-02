@@ -10,11 +10,10 @@ export default async function customerPersonaGenerator(): Promise<string> {
     const model = new ChatOpenAI({
         apiKey: process.env.OPENAI_API_KEY,
         model: "gpt-3.5-turbo",
-        temperature: 1.1,
-        maxTokens: 4095,
+        temperature: 1.2,
         topP: 1,
-        frequencyPenalty: 0,
-        presencePenalty: 0.21,
+        frequencyPenalty: 0.25,
+        presencePenalty: 0.25,
     });
     
     const examplePrompt = ChatPromptTemplate.fromMessages([
