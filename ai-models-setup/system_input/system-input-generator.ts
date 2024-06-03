@@ -4,9 +4,9 @@ import {
     FewShotChatMessagePromptTemplate,
 } from "@langchain/core/prompts";
 
-import { prompt, examples } from "./few-shot-examples";
+import { prompts, examplesObject } from "./few-shot-examples";
 
-export default async function customerPersonaGenerator(): Promise<string> {
+export default async function customerPersonaGenerator(questionTopic: string): Promise<string> {
     const model = new ChatOpenAI({
         apiKey: process.env.OPENAI_API_KEY,
         model: "gpt-3.5-turbo",
@@ -20,6 +20,45 @@ export default async function customerPersonaGenerator(): Promise<string> {
         ["human", "{input}"],
         ["ai", "{output}"],
     ]);
+
+    let examples: { input: string, output: string }[] = [];
+    let prompt: string = "";
+
+    switch (questionTopic) {
+        case "products and services": {
+            examples = examplesObject.productsAndServicesExample;
+            prompt = prompts.productsAndServices;
+            break;
+        }
+        case "ideal clients": {
+            examples = examplesObject.idealClientsExample;
+            prompt = prompts.idealClients;
+            break;
+        }
+        case "brand": {
+            examples = examplesObject.brandExample;
+            prompt = prompts.brand;
+            break;
+        }
+        case "mission": {
+            examples = examplesObject.missionExample;
+            prompt = prompts.mission;
+            break;
+        }
+        case "values": {
+            examples = examplesObject.valuesExample;
+            prompt = prompts.values;
+            break;
+        }
+        case "goals": {
+            examples = examplesObject.goalsExample;
+            prompt = prompts.goals;
+            break;
+        }
+        default: {
+            throw new Error("Invalid question topic");
+        }
+    }
 
     const fewShotPrompt: ChatPromptTemplate = new FewShotChatMessagePromptTemplate({
         examplePrompt,

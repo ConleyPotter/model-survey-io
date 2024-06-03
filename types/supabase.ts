@@ -9,6 +9,38 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      documents: {
+        Row: {
+          content: string | null
+          embedding: string | null
+          id: number
+          metadata: Json | null
+          owner_id: string
+        }
+        Insert: {
+          content?: string | null
+          embedding?: string | null
+          id?: never
+          metadata?: Json | null
+          owner_id?: string
+        }
+        Update: {
+          content?: string | null
+          embedding?: string | null
+          id?: never
+          metadata?: Json | null
+          owner_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "documents_owner_id_fkey"
+            columns: ["owner_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       survey_responses: {
         Row: {
           answer: string | null
@@ -17,6 +49,7 @@ export type Database = {
           id: number
           question: string | null
           question_number: number | null
+          topic: string | null
         }
         Insert: {
           answer?: string | null
@@ -25,6 +58,7 @@ export type Database = {
           id?: number
           question?: string | null
           question_number?: number | null
+          topic?: string | null
         }
         Update: {
           answer?: string | null
@@ -33,6 +67,7 @@ export type Database = {
           id?: number
           question?: string | null
           question_number?: number | null
+          topic?: string | null
         }
         Relationships: [
           {
@@ -48,44 +83,242 @@ export type Database = {
         Row: {
           brand: string | null
           company_name: string | null
-          content_strategy: string | null
           created_at: string
+          creator: string | null
+          goals: string | null
           id: number
-          ideation_and_creativity: string | null
+          ideal_clients: string | null
+          mission: string | null
           products_and_services: string | null
           system_msg: string | null
-          target_audience: string | null
+          values: string | null
         }
         Insert: {
           brand?: string | null
           company_name?: string | null
-          content_strategy?: string | null
           created_at?: string
+          creator?: string | null
+          goals?: string | null
           id?: number
-          ideation_and_creativity?: string | null
+          ideal_clients?: string | null
+          mission?: string | null
           products_and_services?: string | null
           system_msg?: string | null
-          target_audience?: string | null
+          values?: string | null
         }
         Update: {
           brand?: string | null
           company_name?: string | null
-          content_strategy?: string | null
           created_at?: string
+          creator?: string | null
+          goals?: string | null
           id?: number
-          ideation_and_creativity?: string | null
+          ideal_clients?: string | null
+          mission?: string | null
           products_and_services?: string | null
           system_msg?: string | null
-          target_audience?: string | null
+          values?: string | null
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "system_inputs_creator_fkey"
+            columns: ["creator"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
       }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      binary_quantize:
+        | {
+            Args: {
+              "": string
+            }
+            Returns: unknown
+          }
+        | {
+            Args: {
+              "": unknown
+            }
+            Returns: unknown
+          }
+      halfvec_avg: {
+        Args: {
+          "": number[]
+        }
+        Returns: unknown
+      }
+      halfvec_out: {
+        Args: {
+          "": unknown
+        }
+        Returns: unknown
+      }
+      halfvec_send: {
+        Args: {
+          "": unknown
+        }
+        Returns: string
+      }
+      halfvec_typmod_in: {
+        Args: {
+          "": unknown[]
+        }
+        Returns: number
+      }
+      hnsw_bit_support: {
+        Args: {
+          "": unknown
+        }
+        Returns: unknown
+      }
+      hnsw_halfvec_support: {
+        Args: {
+          "": unknown
+        }
+        Returns: unknown
+      }
+      hnsw_sparsevec_support: {
+        Args: {
+          "": unknown
+        }
+        Returns: unknown
+      }
+      hnswhandler: {
+        Args: {
+          "": unknown
+        }
+        Returns: unknown
+      }
+      ivfflat_bit_support: {
+        Args: {
+          "": unknown
+        }
+        Returns: unknown
+      }
+      ivfflat_halfvec_support: {
+        Args: {
+          "": unknown
+        }
+        Returns: unknown
+      }
+      ivfflathandler: {
+        Args: {
+          "": unknown
+        }
+        Returns: unknown
+      }
+      l2_norm:
+        | {
+            Args: {
+              "": unknown
+            }
+            Returns: number
+          }
+        | {
+            Args: {
+              "": unknown
+            }
+            Returns: number
+          }
+      l2_normalize:
+        | {
+            Args: {
+              "": string
+            }
+            Returns: string
+          }
+        | {
+            Args: {
+              "": unknown
+            }
+            Returns: unknown
+          }
+        | {
+            Args: {
+              "": unknown
+            }
+            Returns: unknown
+          }
+      match_documents: {
+        Args: {
+          query_embedding: string
+          match_count?: number
+          filter?: Json
+        }
+        Returns: {
+          id: number
+          content: string
+          metadata: Json
+          similarity: number
+        }[]
+      }
+      sparsevec_out: {
+        Args: {
+          "": unknown
+        }
+        Returns: unknown
+      }
+      sparsevec_send: {
+        Args: {
+          "": unknown
+        }
+        Returns: string
+      }
+      sparsevec_typmod_in: {
+        Args: {
+          "": unknown[]
+        }
+        Returns: number
+      }
+      vector_avg: {
+        Args: {
+          "": number[]
+        }
+        Returns: string
+      }
+      vector_dims:
+        | {
+            Args: {
+              "": string
+            }
+            Returns: number
+          }
+        | {
+            Args: {
+              "": unknown
+            }
+            Returns: number
+          }
+      vector_norm: {
+        Args: {
+          "": string
+        }
+        Returns: number
+      }
+      vector_out: {
+        Args: {
+          "": string
+        }
+        Returns: unknown
+      }
+      vector_send: {
+        Args: {
+          "": string
+        }
+        Returns: string
+      }
+      vector_typmod_in: {
+        Args: {
+          "": unknown[]
+        }
+        Returns: number
+      }
     }
     Enums: {
       [_ in never]: never
